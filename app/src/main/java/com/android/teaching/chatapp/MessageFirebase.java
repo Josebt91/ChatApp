@@ -25,7 +25,7 @@ public class MessageFirebase {
                     messages.add(model);
                     Log.d("Firebase Interactor", "Message: " + model.getUsername());
                     Log.d("Firebase Interactor", "Message: " + model.getText());
-                    messages.add(model);
+
                 }
                 callback.onMessagesAvailable();
             }
