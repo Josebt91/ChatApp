@@ -21,8 +21,10 @@ public class MessageFirebase {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot nodomensaje:dataSnapshot.getChildren()){
-                    Message model = nodomensaje.getValue(Message.class);
+                    Message model =nodomensaje.getValue(Message.class);
+                    messages.add(model);
                     Log.d("Firebase Interactor", "Message: " + model.getUsername());
+                    Log.d("Firebase Interactor", "Message: " + model.getText());
                     messages.add(model);
                 }
                 callback.onMessagesAvailable();

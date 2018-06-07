@@ -3,11 +3,14 @@ package com.android.teaching.chatapp;
 public class Message {
 
     private String username;
-    private String message;
+    private String text;
 
-    public Message(String username, String message) {
+    public Message(String username, String text) {
         this.username = username;
-        this.message = message;
+        this.text = text;
+    }
+    public Message(){
+
     }
 
     public String getUsername() {
@@ -18,11 +21,11 @@ public class Message {
         this.username = username;
     }
 
-    public String getMessage() {
-        return message;
+    public String getText() {
+        return text;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setText(String text) {
+        this.text = text;
     }
 }

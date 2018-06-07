@@ -23,12 +23,19 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        messageFirebase=new MessageFirebase();
-        messageFirebase.getMessage();
-
         listView=findViewById(R.id.chat_view);
-        myAdapter=new MyAdapter();
-        listView.setAdapter(myAdapter);
+
+        messageFirebase=new MessageFirebase();
+        messageFirebase.getMessage(new MessagesCallback() {
+            @Override
+            public void onMessagesAvailable() {
+                myAdapter=new MyAdapter();
+                listView.setAdapter(myAdapter);
+            }
+        });
+
+
+
     }
 
     private class MyAdapter extends BaseAdapter{
@@ -55,8 +62,8 @@ public class ChatActivity extends AppCompatActivity {
             EditText username= rowView.findViewById(R.id.username_view);
             username.setText(messageFirebase.getMessage().get(i).getUsername());
 
-            EditText description= rowView.findViewById(R.id.description_view);
-            username.setText(messageFirebase.getMessage().get(i).getMessage());
+            EditText text= rowView.findViewById(R.id.description_view);
+            text.setText(messageFirebase.getMessage().get(i).getText());
 
             return rowView;
         }
