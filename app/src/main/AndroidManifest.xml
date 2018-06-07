@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewMessageActivity"></activity>
+        <activity android:name=".NewMessageActivity"
+            android:parentActivityName=".ChatActivity"
+            android:label="@string/newtoolbar">
+        </activity>
     </application>
 
 </manifest>

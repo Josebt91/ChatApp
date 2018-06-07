@@ -2,4 +2,7 @@
     <string name="app_name">ChatApp</string>
     <string name="username">Username</string>
     <string name="description">Mensaje</string>
+    <string name="newtoolbar">New message</string>
+    <string name="addnewmessage">Add new message</string>
+    <string name="enviar">ENVIAR</string>
 </resources>
